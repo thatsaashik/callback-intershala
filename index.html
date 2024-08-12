@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Examples</title>
+    <!-----------------------------------------------favicons----------------------------------------------------------->
+    <link rel="shortcut icon"
+        href="data:image/jpeg;base64,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"
+        type="image/x-icon">
+    <!-- -------------------------------------------css----------------------------------------------------------------->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .main {
+            display: flex;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6989f2 0%, #7dfe99);
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .box1 {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .box1 button {
+            background-color: #34c759;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+
+        .box1 button:hover {
+            background-color: #32a94a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .box2 {
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #4A90E2;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px #32a94a;
+        }
+
+        button#Btn {
+            padding: 12px 24px;
+            background-color: #4A90E2;
+            color: #fff;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button#Btn:hover {
+            background-color: #3b78d0;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        #output {
+            margin-top: 30px;
+            padding: 20px;
+            min-width: 400px;
+            border: 1px solid #ccc;
+            background-color: rgba(141, 255, 240, 0.966);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            color: #333;
+            max-width: 600px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="box1"> <a href="async_await.html"><button>async_await</button></a>
+            <a href="callbacks.html"><button>Callback</button></a>
+        </div>
+        <div class="box2">
+            <h1>Promise Example</h1>
+            <button id="Btn">Click Me</button>
+            <div id="output"></div>
+        </div>
+    </div>
+    <script src="promises.js"></script>
+</body>
+
+</html>
